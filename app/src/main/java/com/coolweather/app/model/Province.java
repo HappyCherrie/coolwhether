@@ -19,7 +19,7 @@ public class Province
         this.id = id;
     }
 
-    public getProvinceName()
+    public String getProvinceName()
     {
         return provinceName;
     }
@@ -29,7 +29,7 @@ public class Province
         this.provinceName = provinceName;
     }
 
-    public getProvinceCode()
+    public String getProvinceCode()
     {
         return provinceCode;
     }

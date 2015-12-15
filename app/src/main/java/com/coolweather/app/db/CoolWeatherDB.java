@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by ct on 2015/12/14.
  */
-public class CoolWhetherDB
+public class CoolWeatherDB
 {
     /**
      * 数据库名
@@ -27,14 +27,14 @@ public class CoolWhetherDB
      */
     public static final int VERSION = 1;
 
-    private static CoolWhetherDB coolWhetherDB;
+    private static CoolWeatherDB coolWhetherDB;
 
     private SQLiteDatabase db;
 
     /**
      *将构造方法私有化
      */
-    private CoolWhetherDB(Context context)
+    private CoolWeatherDB(Context context)
     {
         CoolWeatherOpenHelper dbHelper = new CoolWeatherOpenHelper(context, DB_NAME, null, VERSION);
         db = dbHelper.getWritableDatabase();
@@ -43,11 +43,11 @@ public class CoolWhetherDB
     /**
     *获取CoolWeatherDB的实例
      */
-    public synchronized static CoolWhetherDB getInstance(Context context)
+    public synchronized static CoolWeatherDB getInstance(Context context)
     {
         if (coolWhetherDB == null)
         {
-            coolWhetherDB = new CoolWhetherDB(context);
+            coolWhetherDB = new CoolWeatherDB(context);
         }
         return coolWhetherDB;
     }
@@ -69,7 +69,7 @@ public class CoolWhetherDB
     /**
      * 从数据库读取全国所有的省份信息
      */
-    public List<Province> loadProvince()
+    public List<Province> loadProvinces()
     {
         List<Province> list = new ArrayList<Province>();
         Cursor cursor = db.query("Province", null, null, null, null, null, null);
