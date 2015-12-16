@@ -17,7 +17,11 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>>
+        </activity>
+        <service android:name="com.coolweather.app.service.AutoUpdateService">
+        </service>
+        <receiver android:name="com.coolweather.app.receiver.AutoUpdateReceiver">
+        </receiver>>
     </application>
 
 </manifest>
